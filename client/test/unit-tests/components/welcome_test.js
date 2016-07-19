@@ -1,11 +1,11 @@
 import { renderComponent, driver, expect } from '../test_helper';
-import Home from '../../../src/components/home';
+import Welcome from '../../../src/components/welcome';
 
-describe('Home' , () => {
+describe('Welcome' , () => {
   let component;
 
   beforeEach(() => {
-    component = renderComponent(Home);
+    component = renderComponent(Welcome);
   });
 
   it('renders something', () => {
@@ -13,6 +13,6 @@ describe('Home' , () => {
   });
 
   it('has the right class', () => {
-    expect(component).to.have.class('home-component');
+    expect(component).to.have.class('welcome-component');
   });
 });

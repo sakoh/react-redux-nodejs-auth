@@ -6,21 +6,21 @@ import {
   CLEAR_ALERT,
   FETCH_MESSAGE
 } from '../../../src/actions/types';
-import authenticationReducer from '../../../src/reducers/authentication';
+import authenReducer from '../../../src/reducers/auth_reducer';
 
 describe('Reducers', () => {
-  describe('authenticationReducer', () => {
+  describe('authenReducer', () => {
 
     it('sets authenticated to true user when it receives the AUTH_USER type', () => {
 
-     const result = authenticationReducer({}, { type: AUTH_USER });
+     const result = authenReducer({}, { type: AUTH_USER });
 
      expect(result.authenticated).to.equal(true);
     });
 
     it('sets authenticated to true user when it receives the UNAUTH_USER type', () => {
 
-     const result = authenticationReducer({}, { type: UNAUTH_USER });
+     const result = authenReducer({}, { type: UNAUTH_USER });
 
      expect(result.authenticated).to.equal(false);
     });
@@ -32,13 +32,13 @@ describe('Reducers', () => {
         status: "danger"
       }
 
-     const result = authenticationReducer({}, { type: SEND_ALERT, payload: payload });
+     const result = authenReducer({}, { type: SEND_ALERT, payload: payload });
 
      expect(result.alert).to.equal(payload);
     });
 
     it('clears alert when it receives action.type CLEAR_ALERT', () => {
-      const result = authenticationReducer({}, { type: CLEAR_ALERT });
+      const result = authenReducer({}, { type: CLEAR_ALERT });
 
       expect(result.alert).to.equal(null);
     });
