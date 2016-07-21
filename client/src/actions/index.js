@@ -68,3 +68,7 @@ export function fetchMessage() {
       });
   }
 }
+
+export function sendAlert(message, status) {
+  return { type: SEND_ALERT, payload: { message, status } };
+}

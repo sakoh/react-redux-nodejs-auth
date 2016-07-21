@@ -4,7 +4,7 @@ export default class Alert extends Component {
   render() {
     const { message, status } = this.props.alert;
 
-    <div className={`alert alert-${status}`}>
+    <div className={`alert alert-${status} alert-component`}>
       {message}
     </div>
   }
